@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Game Hub</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    header {
+      padding: 20px;
+      background: #222;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .game {
+      background: #222;
+      padding: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .game:hover {
+      background: #333;
+      transform: scale(1.05);
+    }
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+    }
+    #gameframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>My Game Hub</header>
+
+<div id="menu" class="grid">
+  <div class="game" onclick="play('https://funhtml5games.com/boxel-rebound/index.html')">Boxel Rebound</div>
+  <div class="game" onclick="play('https://funhtml5games.com/tunnel-rush/index.html')">Tunnel Rush</div>
+  <div class="game" onclick="play('https://html5games.com/Embed/MotoX3M/')">Moto X3M</div>
+  <div class="game" onclick="play('https://funhtml5games.com/1v1-lol/index.html')">1v1.LOL Clone</div>
+</div>
+
+<iframe id="gameframe"></iframe>
+
+<script>
+  function play(url) {
+    document.getElementById("menu").style.display = "none";
+    const frame = document.getElementById("gameframe");
+    frame.src = url;
+    frame.style.display = "block";
+  }
+</script>
+
+</body>
+</html>
